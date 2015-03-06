@@ -1,5 +1,5 @@
 var sget = require('sget');
-var keyWord = "ramen";
+var keyWord = "sesquipedalian";
 var guessedWord = new Array(keyWord.length);
 var guesses = new Array;
 var guessesLeft = 8;
@@ -15,7 +15,7 @@ function gameMenu(){
 	console.log("1) Make a guess");
 	console.log("2) Get a hint");
 	console.log("3) See guessed letters");
-	console.log("4) See your progress");
+	console.log("4) Give up at life");
 	console.log("---------------------");
 	
 	var menuChoice = parseInt(sget("Enter a number:"));
@@ -31,7 +31,7 @@ function gameMenu(){
 			displayStatus();
 			break;
 		case 4:
-			displayStatus();
+			process.exit(0);
 			break;
 		default:
 			console.log("Please enter a number!");
@@ -142,16 +142,12 @@ function addToGuesses(guess){
 	guesses.push(guess);
 }
 
-
-
 function giveHint(){
 	clear();
-	if (hints===2){
-		console.log("It is a food!");
+	if (hints>0){
+		var hintLetter = pickHint();	
 	}
-	else if (hints ===1){
-		console.log("It is a noodle!");
-	}
+	
 	else{
 		console.log("NO HINTS FOR YOU!");
 	}
@@ -161,6 +157,14 @@ function giveHint(){
 	gameMenu();
 
 }
+
+function pickHint(hint){
+	for(i=0; i<keyWord.length; i++){
+		if (guessedWord[i] === undefined)
+			return keyWord[i];
+	}
+}
+
 
 //setGuessedWord(keyWord, guessedWord);
 gameMenu();
