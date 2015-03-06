@@ -1,0 +1,36 @@
+#top {
+
+	font-family: helvetica, arial, sans-serif;
+	color: pink;
+	background-color: green;
+	font-size:15px;
+
+}
+
+#mid {
+
+	font-family: times, serif;
+	color: green;
+	background-color: pink;
+	font-size: 2px;
+	font-style: italic;
+
+}
+
+#bottom {
+	font-weight: bolder;
+	font-size: 3em;
+}
+
+#quam {
+	font-size: 27;
+	font-style: italic;
+	color: purple;
+}
+
+#quisquam {
+
+	font-family: comic, sans-serif;
+	color: green;
+}
+
