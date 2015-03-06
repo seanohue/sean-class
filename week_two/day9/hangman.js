@@ -145,7 +145,7 @@ function addToGuesses(guess){
 function giveHint(){
 	clear();
 	if (hints>0){
-		var hintLetter = pickHint();	
+		console.log(pickHint());
 	}
 	
 	else{
@@ -158,7 +158,7 @@ function giveHint(){
 
 }
 
-function pickHint(hint){
+function pickHint(){
 	for(i=0; i<keyWord.length; i++){
 		if (guessedWord[i] === undefined)
 			return keyWord[i];
