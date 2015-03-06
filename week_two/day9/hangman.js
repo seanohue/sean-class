@@ -63,6 +63,7 @@ function displayGuessedWord(){
 
 function displayGuesses(){
 	console.log("You have guessed:" + guesses);
+	console.log("You have "+guessesLeft+" guesses left.");
 }
 
 function checkWin(){
@@ -89,7 +90,7 @@ function checkWin(){
 
 function guessLetter(){
 	clear();
-	var guess = sget("Enter your guess: ").trim();
+	var guess = sget("Enter your guess: ").trim().toLowerCase();
 	//if (guess.length > 1)
 	//	guessLetter();
 	checkLetter(guess);
